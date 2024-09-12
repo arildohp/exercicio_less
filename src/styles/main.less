@@ -1,4 +1,6 @@
-@import "variaveis.less";
+@import "mapas.less";
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
 
 * {
     margin: 0;
@@ -8,7 +10,7 @@
 }
 
 body {
-    background-color: @corDeFundo;
+    background-color: #colors[backgroundColor];
 }
 
 li {
@@ -22,7 +24,7 @@ li {
 }
 
 header {
-    background-color: @corDoHeader;
+    background-color: #colors[corDoHeader];
     position: sticky;
     top: 0;
     left: 0;
@@ -45,7 +47,7 @@ header .container {
 }
 
 .menu li a {
-    color: @color;
+    color: #colors[textColor];
     text-decoration: none;
 }
 
@@ -69,8 +71,8 @@ section {
 
 .product-button {
     display: block;
-    background-color: @corDoButao;
-    color: @color;
+    background-color: #colors[corDoBotao];
+    color:  #colors[textColor];
     text-align: center;
     padding: 8px 0;
     border-radius: 8px;
@@ -79,10 +81,10 @@ section {
 }
 
 .product-button:hover {
-    background-color: @corDoHover;
+    background-color: #colors[corDoHover];
 }
 
-@media screen and (max-width: 1023px) {
+@media @breakpointTablet{
     .container {
         max-width: 80%;
     }
@@ -93,7 +95,7 @@ section {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media @breakpointMobile {
     .products {
         display: block;
     }
